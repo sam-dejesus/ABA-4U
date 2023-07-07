@@ -1,0 +1,118 @@
+Boiler plate BLACK Check List BLUE Options Orange Input Purple
+Natasha Alvarez, accompanied by her mother, was seen on 0/0/2023 for treatment of language and
+behavior for a session of 0 minutes duration. Natasha Alvarez is diagnosed with autism spectrum
+disorder. UPDATE SINCE LAST VISIT: Home functioning: Since last seen, Natasha’s functioning at home
+has been good. School functioning: Since last seen, Natasha’s functioning at school has been N/A -
+Patient is not in school currently. PROBLEMS ADDRESSED AND BEHAVIORAL OBSERVATIONS: Today,
+Natasha was observed smiling and laughing with the therapist throughout her session.Issues addressed
+today include increasing communication and compliance and decreasing problem behavior. Today we
+worked on language skills and acquisition programs in the form of
+Today we worked on
+accepting alternatives,
+compliance targets,
+daily living skills,
+following instructions,
+imitation,
+reading comprehension,
+intraverbals (conversation skills),
+mands (requests),
+match to sample,
+play skills,
+social skills,
+tact’s (labels),
+waiting
+writing
+
+Natasha did well with
+Accepting Delay of Reinforcement Added comments
+“Wait for item” (%), “Wait for attention” (%), “Wait for activity” (%),
+Accepting No; “More time” (%), “Activity” (%), “Item” (%),
+Answering Yes and No Questions; “Desire” (%), “Factual” (%),
+Following Instructions; “Come here” (%), “Stand and wait” (%),
+Functional Communication (%),
+Functional use of Items (%),
+Request Permission (%), “Drink juice” (%),
+Request Go
+Request Stop
+Request Help
+Sharing; “With therapist” (%), “With mom” (%),
+Taking Turns (%),
+Requesting
+she needed assistance with tasks.
+Accepting Delay of Reinforcement Added comments
+“Wait for item” (%), “Wait for attention” (%), “Wait for activity” (%),
+Accepting No; “More time” (%), “Activity” (%), “Item” (%),
+Answering Yes and No Questions; “Desire” (%), “Factual” (%),
+Following Instructions; “Come here” (%), “Stand and wait” (%),
+Functional Communication (%),
+Functional use of Items (%),
+Request Permission (%), “Drink juice” (%),
+Request Go
+Request Stop
+Request Help
+Sharing; “With therapist” (%), “With mom” (%),
+Taking Turns (%),
+Requesting
+
+Problem behaviors she exhibited were
+These behaviors included
+bolting, ___
+dropping, ____
+echolalia, ____
+elopement, ___
+physical aggressions, ___
+property destruction, ___
+repetitive behaviors, ___
+scripting, __
+self-injurious behavior, ___
+tantrum, __
+verbal refusal, __
+We worked on decreasing inappropriate behaviors by using antecedent manipulations, behavioral
+momentum, blocking, contracting, differential reinforcement, ignoring, over-correction, Premack
+principle (first then), prompting the correct response, prompting to clean up items thrown, prompting to
+complete task demand, redirecting, representing task demand until complies without problem behavior,
+response cost and time out. Today, antecedents to problem behavior were
+adverse stimuli,
+denied access,
+divided attention,
+lack of attention,
+playing,
+removal of an item,
+task demands.
+We worked on decreasing inappropriate behaviors by using antecedent manipulations, behavioral
+momentum, blocking, contracting, differential reinforcement, Premack principle (first then), prompting
+the correct response, prompting to complete task demand, redirecting, and representing task demand
+until complies without problem behavior. Compliance: Good. TREATMENT PROGRESS: Natasha’s
+progress toward treatment goal is slow. We will continue with the current targets. PLAN: There is a need
+for continued treatment, and the next session&#39;s goals will be to continue to work on treatment plan
+goals. A follow-up appointment has been scheduled. SUPERVISION/STAFF
+
+
+-------------------------------------------------
+
+const inquirer = require('inquirer');
+
+inquirer
+  .prompt([
+    {
+      type: 'list',
+      name: 'likeIceCream',
+      message: 'Do you like ice cream?',
+      choices: ['Yes', 'No'],
+    },
+    {
+      type: 'input',
+      name: 'toppings',
+      message: 'What kind of toppings do you like?',
+      when: (answers) => answers.likeIceCream === 'Yes',
+    },
+  ])
+  .then((answers) => {
+    console.log('Answers:', answers);
+    // You can access the user's responses using dot notation
+    console.log('Like ice cream:', answers.likeIceCream);
+    console.log('Toppings:', answers.toppings);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });

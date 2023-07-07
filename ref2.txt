@@ -1,0 +1,139 @@
+const inquirer = require('inquirer');
+const fs = require('fs');
+
+function generateNotes() {
+  inquirer
+    .prompt([
+      {
+        type: 'input',
+        name: 'clientName',
+        message: 'Enter the client name:',
+      },
+      {
+        type: 'input',
+        name: 'clientGuardian',
+        message: 'Enter the client guardian:',
+      },
+      {
+        type: 'input',
+        name: 'date',
+        message: 'Enter the session date:',
+      },
+      // Add more prompts for the remaining variables
+    ])
+    .then((answers) => {
+      const note = `${answers.clientName}, accompanied by their ${answers.clientGuardian}, was seen on ${answers.date} for treatment of language and behavior for a session of ${answers.sessionLength} minutes duration. ${answers.clientName} is diagnosed with autism spectrum disorder. UPDATE SINCE LAST VISIT: Home functioning: Since last seen, ${answers.clientName}’s functioning at home has been ${answers.homeFunctioning}. School functioning: Since last seen, ${answers.clientName}’s functioning at school has been ${answers.schoolFunctioning} - ${answers.clientSchoolStatus}. PROBLEMS ADDRESSED AND BEHAVIORAL OBSERVATIONS: Today, ${answers.clientName} was observed ${answers.todaysObservation} throughout their session.Issues addressed today include ${answers.issuesAddressedToday}. Today we worked on language skills and acquisition programs in the form of ${answers.workedOnActivities}. ${answers.clientName} did well with ${answers.goodBehavior}. ${answers.clientName} needed assistance with ${answers.needAssistantBehavior}. Problem behaviors she exhibited were ${answers.problemBehavior}. We worked on decreasing inappropriate behaviors by using antecedent manipulations behavioral momentum, blocking, contracting, differential reinforcement, ignoring, over-correction, Premack principle (first then), prompting the correct response, prompting to clean up items thrown, prompting to complete task demand, redirecting, representing task demand until complies without problem behavior, response cost, and time out. Today, antecedents to problem behavior were ${answers.problemBehavior}. We worked on decreasing inappropriate behaviors by using antecedent manipulations, behavioral momentum, blocking, contracting, differential reinforcement, Premack principle (first then), prompting the correct response, prompting to complete task demand, redirecting, and representing task demand until complies without problem behavior. Compliance: Good. TREATMENT PROGRESS: ${answers.clientName}’s progress toward treatment goal is slow. We will continue with the current targets. PLAN: There is a need for continued treatment, and the next session's goals will be to continue to work on treatment plan goals. A follow-up appointment has been scheduled. SUPERVISION/STAFF TRAINING: Today's session was conducted by ${answers.RBTName}. Registered Behavior Technician`;
+
+      // Write the note to a file
+      fs.writeFile('notes.txt', note, (err) => {
+        if (err) {
+          console.error('Error writing the file:', err);
+        } else {
+          console.log('Notes generated and saved successfully!');
+        }
+      });
+    })
+    .catch((error) => {
+      console.error('Error occurred:', error);
+    });
+}
+
+// Call the function to start generating notes
+generateNotes();
+//-------------------------------------------------------------------
+const inquirer = require('inquirer');
+const fs = require('fs');
+
+function generateNotes() {
+  inquirer
+    .prompt([
+      {
+        type: 'input',
+        name: 'clientName',
+        message: 'Enter the client name:',
+      },
+      {
+        type: 'input',
+        name: 'clientGuardian',
+        message: 'Enter the client guardian:',
+      },
+      {
+        type: 'input',
+        name: 'date',
+        message: 'Enter the session date:',
+      },
+      {
+        type: 'input',
+        name: 'sessionLength',
+        message: 'Enter the session length in minutes:',
+      },
+      {
+        type: 'input',
+        name: 'homeFunctioning',
+        message: 'Enter the client\'s functioning at home since last seen:',
+      },
+      {
+        type: 'input',
+        name: 'schoolFunctioning',
+        message: 'Enter the client\'s functioning at school since last seen:',
+      },
+      {
+        type: 'input',
+        name: 'clientSchoolStatus',
+        message: 'Enter the client\'s school status:',
+      },
+      {
+        type: 'input',
+        name: 'todaysObservation',
+        message: 'Enter the observations for today\'s session:',
+      },
+      {
+        type: 'input',
+        name: 'issuesAddressedToday',
+        message: 'Enter the issues addressed today:',
+      },
+      {
+        type: 'input',
+        name: 'workedOnActivities',
+        message: 'Enter the activities worked on today:',
+      },
+      {
+        type: 'input',
+        name: 'goodBehavior',
+        message: 'Enter the instances of good behavior observed:',
+      },
+      {
+        type: 'input',
+        name: 'needAssistantBehavior',
+        message: 'Enter the instances where assistance was needed:',
+      },
+      {
+        type: 'input',
+        name: 'problemBehavior',
+        message: 'Enter the problem behaviors exhibited:',
+      },
+      {
+        type: 'input',
+        name: 'RBTName',
+        message: 'Enter the name of the Registered Behavior Technician:',
+      },
+    ])
+    .then((answers) => {
+      const note = `${answers.clientName}, accompanied by their ${answers.clientGuardian}, was seen on ${answers.date} for treatment of language and behavior for a session of ${answers.sessionLength} minutes duration. ${answers.clientName} is diagnosed with autism spectrum disorder. UPDATE SINCE LAST VISIT: Home functioning: Since last seen, ${answers.clientName}'s functioning at home has been ${answers.homeFunctioning}. School functioning: Since last seen, ${answers.clientName}'s functioning at school has been ${answers.schoolFunctioning} - ${answers.clientSchoolStatus}. PROBLEMS ADDRESSED AND BEHAVIORAL OBSERVATIONS: Today, ${answers.clientName} was observed ${answers.todaysObservation} throughout their session. Issues addressed today include ${answers.issuesAddressedToday}. Today we worked on language skills and acquisition programs in the form of ${answers.workedOnActivities}. ${answers.clientName} did well with ${answers.goodBehavior}. ${answers.clientName} needed assistance with ${answers.needAssistantBehavior}. Problem behaviors she exhibited were ${answers.problemBehavior}. We worked on decreasing inappropriate behaviors by using antecedent manipulations, behavioral momentum, blocking, contracting, differential reinforcement, ignoring, over-correction, Premack principle (first then), prompting the correct response, prompting to clean up items thrown, prompting to complete task demand, redirecting, representing task demand until complies without problem behavior, response cost, and time out. Today, antecedents to problem behavior were ${answers.problemBehavior}. We worked on decreasing inappropriate behaviors by using antecedent manipulations, behavioral momentum, blocking, contracting, differential reinforcement, Premack principle (first then), prompting the correct response, prompting to complete task demand, redirecting, and representing task demand until complies without problem behavior. Compliance: Good. TREATMENT PROGRESS: ${answers.clientName}'s progress toward treatment goal is slow. We will continue with the current targets. PLAN: There is a need for continued treatment, and the next session's goals will be to continue to work on treatment plan goals. A follow-up appointment has been scheduled. SUPERVISION/STAFF TRAINING: Today's session was conducted by ${answers.RBTName}. Registered Behavior Technician`;
+
+      // Write the note to a file
+      fs.writeFile('notes.txt', note, (err) => {
+        if (err) {
+          console.error('Error writing the file:', err);
+        } else {
+          console.log('Notes generated and saved successfully!');
+        }
+      });
+    })
+    .catch((error) => {
+      console.error('Error occurred:', error);
+    });
+}
+
+// Call the function to start generating notes
+generateNotes();
